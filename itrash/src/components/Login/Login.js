@@ -23,6 +23,7 @@ import {APIHOST as host} from '../../App.json'
 import { isNull } from 'util'
 import axios from 'axios'
 import Cookies from 'universal-cookie'
+import Logo from './inicio.png'
 
 function Copyright() {
   return (
@@ -41,8 +42,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   image: {
-    backgroundImage:
-      "url(https://i1.wp.com/metropolisanluis.com/wp-content/uploads/2016/01/camion-de-basura-dibujo.jpg?ssl=1)",
+    backgroundImage: `url(${Logo})`,
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -122,8 +122,8 @@ export default function Login() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockIcon />
+          <Avatar className={classes.avatar} style={{backgroundColor:"#303f9f"}}>
+            <LockIcon  />
           </Avatar>
           <Typography component="h1" variant="h5">
             Inicio de Sesión
@@ -179,6 +179,7 @@ export default function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              style={{backgroundColor:"#303f9f"}}
             >
               Iniciar Sesión
             </Button>           

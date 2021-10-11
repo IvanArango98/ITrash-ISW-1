@@ -14,7 +14,7 @@ import Sidebar from "./Sidebar";
 import { makeStyles } from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import Logo from "./formularios/Itrash.png";
+import Logo from "./formularios/Logo.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
