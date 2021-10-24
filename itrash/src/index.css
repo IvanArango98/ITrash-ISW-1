@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html,body{
+  background-size: cover;  
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url("/src/components/Login/fondo.png");
+  font-family: Poppins;
+}
+
+.MuiInputLabel-outlined.MuiInputLabel-shrink{
+  font-weight: 800;
+  color: "#FFFFFF";
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedStart.MuiOutlinedInput-adornedStart
+{
+  background-color: #FFFCF2;
+}
+
+.MuiInputBase-input.MuiOutlinedInput-input.MuiInputBase-inputAdornedStart.MuiOutlinedInput-inputAdornedStart
+{
+  font-weight: 600;
+  color:#000000;
+}
+
+.btn, .btn-large, .btn-small
+{
+    background-color: #FFFCF2 !important;
+    color:black;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active,
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiStepIcon-root.Mui-completed.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root
+{
+  color: #403D39 !important;
+}

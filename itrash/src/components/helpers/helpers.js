@@ -9,7 +9,7 @@ const cookies = new Cookies();
 export function calculaExpiracionSesion()
 {
     const now = new Date().getTime();
-    const newDate = now + 60 * 1 * 1000
+    const newDate = now + 60 * 15 * 1000
     return new Date(newDate)
 }
 

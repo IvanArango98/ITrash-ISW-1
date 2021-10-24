@@ -24,6 +24,7 @@ import { isNull } from 'util'
 import axios from 'axios'
 import Cookies from 'universal-cookie'
 import Logo from './inicio.png'
+import Imagen1 from './fondo.png'
 
 function Copyright() {
   return (
@@ -51,11 +52,22 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
+  image2: {
+    backgroundImage: `url(${Imagen1})`,
+    backgroundRepeat: "no-repeat",
+    backgroundColor:
+      theme.palette.type === "light"
+        ? theme.palette.grey[50]
+        : theme.palette.grey[900],
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  },
   paper: {
     margin: theme.spacing(8, 4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    color: "#000000"
   },
   avatar: {
     margin: theme.spacing(1),
@@ -100,7 +112,7 @@ export default function Login() {
                 UserName: values.email
             }))
 
-              window.location.href = "/Main"
+              window.location.href = "/Principal"
           }          
       }).catch(err => {
           console.error(err)                  
@@ -120,19 +132,24 @@ export default function Login() {
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square   
+      className={classes.image2} 
+      >
         <div className={classes.paper}>
-          <Avatar className={classes.avatar} style={{backgroundColor:"#303f9f"}}>
+          <Avatar className={classes.avatar} style={{backgroundColor:"#403D39"}}>
             <LockIcon  />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <h1>
             Inicio de Sesión
-          </Typography>
+          </h1>
+          <p style={{fontSize:"17px"}}>
+          Necesitamos unos cuantos datos para darte la bienvenida al futuro.
+          </p>          
           <form className={classes.form} noValidate>
             <TextField
              margin="normal"
               id="email"
-              label="Email Address"
+              placeholder="Correo electronico"
               name="email" 
               variant="outlined"              
               required
@@ -154,7 +171,7 @@ export default function Login() {
             <TextField
              margin="normal"
               id="password"
-              label="password"
+              placeholder="Contraseña"
               name="password" 
               variant="outlined"  
               type="password"            
@@ -179,7 +196,7 @@ export default function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              style={{backgroundColor:"#303f9f"}}
+              style={{backgroundColor:"#403D39"}}
             >
               Iniciar Sesión
             </Button>           
