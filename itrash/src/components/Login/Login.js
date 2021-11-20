@@ -223,7 +223,7 @@ export default function Login() {
               className={classes.submit}
               style={{backgroundColor:"#403D39"}}
             >
-              Iniciar Sesión
+              Iniciar Sesión :)
             </Button>           
             <Box mt={5}>
               <Copyright />
