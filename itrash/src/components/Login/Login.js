@@ -25,6 +25,8 @@ import axios from 'axios'
 import Cookies from 'universal-cookie'
 import Logo from './inicio.png'
 import Imagen1 from './fondo.png'
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 function Copyright() {
   return (
@@ -90,17 +92,33 @@ export default function Login() {
     email: undefined,
     password: undefined
   })
+
+  const [open, setOpen] = React.useState(false);
+  const [mensaje, setmensaje] = React.useState("");
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
   
 
   const iniciarSesion = (values) =>
-  {
+  {    
       axios.post(`${host}/Login`, 
       {   DireccionCorreo: values.email,
         Contraseña: values.password
-      }).then( response => {
-          if(isNull(response.data.token))
-          {
-              alert("Usuario y/o contraseña invalido")
+      }).then( response => {        
+          if(isNull(response.data.status !== 200))
+          {            
+            setmensaje("Error: " + response.status.code)
+            handleClick()                        
           }
           else{
               cookies.set("_s",response.data.token,{
@@ -115,7 +133,8 @@ export default function Login() {
               window.location.href = "/Principal"
           }          
       }).catch(err => {
-          console.error(err)                  
+        setmensaje("Ha ocurrido un error de conexión.")
+        handleClick()                     
       })             
   }
 
@@ -129,6 +148,11 @@ export default function Login() {
 
   return (
       <formik onSubmit={formik.handleSubmit}>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+              {mensaje}
+            </Alert>
+            </Snackbar>
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
