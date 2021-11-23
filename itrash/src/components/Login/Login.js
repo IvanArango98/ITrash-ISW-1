@@ -168,7 +168,7 @@ export default function Login() {
             Inicio de Sesión
           </h1>
           <p style={{fontSize:"17px"}}>
-          Prueba continuous integration and continuous delivery      
+          Necesitamos unos cuantos datos para darte la bienvenida al futuro.          
           </p>          
           <form className={classes.form} noValidate>
             <TextField
