@@ -168,7 +168,7 @@ export default function Login() {
             Inicio de Sesión
           </h1>
           <p style={{fontSize:"17px"}}>
-          Necesitamos unos cuantos datos para darte la bienvenida al futuro.
+          Prueba continuous integration and continuous delivery      
           </p>          
           <form className={classes.form} noValidate>
             <TextField
@@ -223,7 +223,7 @@ export default function Login() {
               className={classes.submit}
               style={{backgroundColor:"#403D39"}}
             >
-              Iniciar Sesión
+              Iniciar Sesión 
             </Button>           
             <Box mt={5}>
               <Copyright />
