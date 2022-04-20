@@ -33,7 +33,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" >
-        {"Itrash 2021 - ISW1 "}
+        {"Itrash 2022 - ISW2 "}
       </Link>
       {new Date().getFullYear()}
     </Typography>
@@ -165,7 +165,7 @@ export default function Login() {
             <LockIcon  />
           </Avatar>
           <h1>
-            Inicio de Sesión
+            Inicio de Sesión Proyecto ISW2
           </h1>
           <p style={{fontSize:"17px"}}>
           Necesitamos unos cuantos datos para darte la bienvenida al futuro.          
